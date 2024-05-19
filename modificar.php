@@ -57,6 +57,12 @@ $sql = $conexion->query("select *from usuarios where id =$id");
             <button type="submit" class="btn btn-info" name="btnregistro" value="ok">Actualizar Registro</button>
         </div>
     </form>
+    <!-- Footer -->
+    <footer class="text-center text-bg-dark mt-auto py-3 fixed-bottom">
+        <small>&copy; 2024. <b>Crud PHP & MySql</b> - Todos los derechos reservados.</small>
+    </footer>
+    <!-- JavaScrip -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

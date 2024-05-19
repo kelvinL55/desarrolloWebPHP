@@ -29,18 +29,15 @@
             return respuesta
         }
     </script>
-
+    <!-- Cabecera -->
     <header class="bg-dark text-light py-3 fixed-top">
         <div class="container d-flex justify-content-between align-items-center">
-            <!-- Logo a la izquierda -->
             <div>
                 <img src="img/logo.png" alt="Logo" class="img-fluid" style="max-height: 50px;">
             </div>
-            <!-- Título centrado -->
             <div>
                 <h1 class="text-center m-0">Registro de Usuarios</h1>
             </div>
-            <!-- Botón de búsqueda a la derecha -->
             <div>
                 <button type="button" class="btn btn-outline-light">Buscar</button>
             </div>
