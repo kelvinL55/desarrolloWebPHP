@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <title>Crud PHP & MySql</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7893341b6a.js" crossorigin="anonymous"></script>
+    <!-- Defino la fecha del sistema -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const dateInput = document.getElementById('fecha_registro');
-
-            dateInput.addEventListener('change', function() {
-                const date = new Date(this.value);
-                const formattedDate = `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getFullYear()}`;
-                console.log(formattedDate);
-                alert(`Fecha seleccionada: ${formattedDate}`);
-            });
+        document.addEventListener("DOMContentLoaded", function() {
+            const fechaInput = document.getElementById('fecha_registro');
+            const hoy = new Date();
+            const dia = String(hoy.getDate()).padStart(2, '0');
+            const mes = String(hoy.getMonth() + 1).padStart(2, '0'); // Los meses empiezan en 0
+            const año = hoy.getFullYear();
+            const fechaActual = `${año}-${mes}-${dia}`;
+            fechaInput.value = fechaActual;
         });
     </script>
 </head>
@@ -26,13 +25,30 @@
 <body>
     <script>
         function eliminar() {
-            var respuesta = confirm("Estas Seguro que deseas eliminar?");
+            var respuesta = confirm("¿Estás seguro de que quieres eliminar este registro?");
             return respuesta
         }
     </script>
-    <div>
-        <h1 class="text-center p-1">Registro de Usuarios </h1>
-    </div>
+
+    <header class="bg-dark text-light py-3 fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Logo a la izquierda -->
+            <div>
+                <img src="img/logo.png" alt="Logo" class="img-fluid" style="max-height: 50px;">
+            </div>
+            <!-- Título centrado -->
+            <div>
+                <h1 class="text-center m-0">Registro de Usuarios</h1>
+            </div>
+            <!-- Botón de búsqueda a la derecha -->
+            <div>
+                <button type="button" class="btn btn-outline-light">Buscar</button>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
     <div class="container-fluid">
 
         <div class="row">
@@ -82,9 +98,11 @@
                         <label for="fecha_registro" class="form-label text-white">Fecha de Registro</label>
                         <input type="date" class="form-control" id="fecha_registro" name="fecha_registro">
                     </div>
+
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Registrar</button>
                     </div>
+
                 </form>
             </div>
 
@@ -117,17 +135,8 @@
                                 <td><?= $datos->rol ?></td>
                                 <td><?= $datos->fecha_registro ?></td>
                                 <td>
-                                    <a href="modificar.php?id=<?= $datos->id ?>" class="btn btn-small btn-warning">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
-                                        </svg>
-                                    </a>
-                                    <a onclick="return eliminar()" href="index.php?id=<?= $datos->id ?>" class="btn btn-small btn-danger">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
-                                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
-                                        </svg>
-                                    </a>
+                                    <a href="modificar.php?id=<?= $datos->id ?>" class="btn btn-small btn-info"> <i class="fa-solid fa-user-pen"></i></a>
+                                    <a onclick="return eliminar()" href="index.php?id=<?= $datos->id ?>" class="btn btn-small btn-danger"> <i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -137,13 +146,12 @@
         </div>
     </div>
     <br>
-    <!-- Pie de página -->
-    <footer class="text-center text-bg-dark mb-1">
-
+    <br>
+    <br>
+    <!-- Footer -->
+    <footer class="text-center text-bg-dark mt-auto py-3 fixed-bottom">
         <small>&copy; 2024. <b>Crud PHP & MySql</b> - Todos los derechos reservados.</small>
-
     </footer>
-
     <!-- JavaScrip -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
