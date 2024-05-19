@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-05-2024 a las 18:46:04
+-- Tiempo de generación: 19-05-2024 a las 05:45:18
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -42,12 +42,13 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `cedula`, `correo`, `telefono`, `rol`, `fecha_registro`) VALUES
-(2, 'Daniel', '1719953786', 'daniel13@gmail.com', '0998453689', 'Jefe Regional', '2020-10-20'),
-(8, 'nely', '1750671024', 'nely@gmail.com', '0994622492', 'directivo', '2020-07-27'),
-(9, 'Maria Jose herrera', '1750671008', 'majo@gmail.com', '0994622496', 'Pasante', '2021-09-17'),
-(11, 'haley', '1266359858', 'haleyc@hotmail.com', '0995632870', 'recursos humanos', '2022-09-19'),
-(12, 'percival', '1715523014', 'perci@gmail.com', '0997706541', ' Pasante', '2023-05-15'),
-(13, 'maria', '1425896310', 'maria152@gmail.com', '0999601043', 'Gerente', '2022-10-12');
+(1, 'Kelvin', '1725458795', ' gi.kelvi@gmail.com', '0912458458', 'Gerente TI', '2024-05-18'),
+(2, 'Milena', '3216546548', '  milena@gmail.com', '094546456', 'Jefe TTHH', '2024-05-17'),
+(3, 'Aylin', '1745612398', '    aylin@micorreo.com', '0978965415', 'Asistente', '2024-05-09'),
+(4, 'Jimena', '1987654328', '  jimena@outlook.es', '0978452645', 'Coordinador de TI', '2024-05-16'),
+(6, 'Luis', '1654985237', ' luis@gmail.com', '6549873215', 'Pasante', '2024-05-18'),
+(7, 'David', '1765432145', 'david@micorreo.com', '0978945214', 'Asistente', '2024-05-18'),
+(8, 'Andres', '1725458795', 'gi.kelvi@gmail.com', '0912458458', 'Gerente TI', '2024-05-18');
 
 --
 -- Índices para tablas volcadas
@@ -67,7 +68,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

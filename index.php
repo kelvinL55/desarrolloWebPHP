@@ -57,8 +57,8 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label for="correo" class="form-label text-white">E-mail</label>
-                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese su e-mail">
+                        <label for="correo" class="form-label text-white">Correo</label>
+                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese su correo">
                     </div>
 
                     <div class="form-group mb-3">
@@ -68,7 +68,14 @@
 
                     <div class="form-group mb-3">
                         <label for="rol" class="form-label text-white">Rol</label>
-                        <input type="text" class="form-control" id="rol" name="rol" placeholder="Ingrese su rol">
+                        <select class="form-select" id="rol" name="rol">
+                            <option selected disabled>Seleccione su rol</option>
+                            <option value="Gerente TI">Gerente TI</option>
+                            <option value="Asistente">Asistente</option>
+                            <option value="Pasante">Pasante</option>
+                            <option value="Pasante">Coordinador TI</option>
+                            <option value="Pasante">Jefe TTHH</option>
+                        </select>
                     </div>
 
                     <div class="form-group mb-3">
