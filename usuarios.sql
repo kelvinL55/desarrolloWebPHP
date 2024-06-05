@@ -33,7 +33,6 @@ CREATE TABLE `usuarios` (
   `cedula` varchar(10) NOT NULL,
   `correo` varchar(150) NOT NULL,
   `telefono` varchar(10) NOT NULL,
-  `rol` varchar(100) NOT NULL,
   `fecha_registro` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -41,14 +40,14 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `cedula`, `correo`, `telefono`, `rol`, `fecha_registro`) VALUES
-(1, 'Kelvin', '1725458795', ' gi.kelvi@gmail.com', '0912458458', 'Gerente TI', '2024-05-18'),
-(2, 'Milena', '3216546548', '  milena@gmail.com', '094546456', 'Jefe TTHH', '2024-05-17'),
-(3, 'Aylin', '1745612398', '    aylin@micorreo.com', '0978965415', 'Asistente', '2024-05-09'),
-(4, 'Jimena', '1987654328', '  jimena@outlook.es', '0978452645', 'Coordinador de TI', '2024-05-16'),
-(6, 'Luis', '1654985237', ' luis@gmail.com', '6549873215', 'Pasante', '2024-05-18'),
-(7, 'David', '1765432145', 'david@micorreo.com', '0978945214', 'Asistente', '2024-05-18'),
-(8, 'Andres', '1725458795', 'gi.kelvi@gmail.com', '0912458458', 'Gerente TI', '2024-05-18');
+INSERT INTO `usuarios` (`id`, `nombre`, `cedula`, `correo`, `telefono`, `fecha_registro`) VALUES
+(1, 'Kelvin', '1725458795', ' gi.kelvi@gmail.com', '0912458458', '2024-05-18'),
+(2, 'Milena', '3216546548', '  milena@gmail.com', '094546456', '2024-05-17'),
+(3, 'Aylin', '1745612398', '    aylin@micorreo.com', '0978965415', '2024-05-09'),
+(4, 'Jimena', '1987654328', '  jimena@outlook.es', '0978452645', '2024-05-16'),
+(6, 'Luis', '1654985237', ' luis@gmail.com', '6549873215', '2024-05-18'),
+(7, 'David', '1765432145', 'david@micorreo.com', '0978945214', '2024-05-18'),
+(8, 'Andres', '1725458795', 'gi.kelvi@gmail.com', '0912458458', '2024-05-18');
 
 --
 -- Índices para tablas volcadas
