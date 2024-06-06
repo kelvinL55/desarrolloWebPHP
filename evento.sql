@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `evento` (
-  `id` int(11) NOT NULL,
+  `id` int(100) NOT NULL,
   `nombreEvento` text NOT NULL,
   `usuario` text NOT NULL,
   `tipoDeEvento` text NOT NULL,
@@ -41,8 +41,27 @@ CREATE TABLE `evento` (
 --
 
 INSERT INTO `evento` (`id`, `nombreEvento`, `usuario`, `tipoDeEvento`, `servicios_Disponibles`, `fecha_registro_evento`) VALUES
-(0, 'Robotica', 'kelvin', 'Conferencia', 'comida', '2024-06-05'),
-(0, 'Programación', 'Javier', 'Presencial', 'comida', '2024-06-13');
+(1, 'Robotica', 'kelvin', 'Conferencia', 'comida', '2024-06-05'),
+(2, 'Programación', 'Javier', 'Presencial', 'comida', '2024-06-13');
+COMMIT;
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `evento`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `evento`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
